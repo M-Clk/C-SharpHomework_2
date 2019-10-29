@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeClassProject", "HomeClassProject\HomeClassProject.csproj", "{48DB718F-8C35-4F1A-AB66-234FB9A74CD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmlakOtomasyonu", "EmlakOtomasyonu\EmlakOtomasyonu.csproj", "{412FDA3C-6E73-41B0-8A09-6349F74521C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{48DB718F-8C35-4F1A-AB66-234FB9A74CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48DB718F-8C35-4F1A-AB66-234FB9A74CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48DB718F-8C35-4F1A-AB66-234FB9A74CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412FDA3C-6E73-41B0-8A09-6349F74521C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412FDA3C-6E73-41B0-8A09-6349F74521C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412FDA3C-6E73-41B0-8A09-6349F74521C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412FDA3C-6E73-41B0-8A09-6349F74521C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -83,13 +83,13 @@ namespace EmlakOtomasyonu
         Ev SatilikEvKaydet()
         {
             SatilikEv yeniSatilik = (SatilikEv)evManager.EvOlustur((int)numEmlakNo.Value, numFiyatOrKira.Value);
-            yeniSatilik = (SatilikEv)evManager.OrtakEvBilgileriGir((int)numOdaSayisi.Value, (int)numKatNumarasi.Value,numAlani.Value, dtYapimTarihi.Value, cbSemti.SelectedItem.ToString()+", "+ cbIli.SelectedItem.ToString(), (Tur)Enum.Parse(typeof(Tur), cbTuru.SelectedItem.ToString()), cbAktif.Checked, yeniSatilik);
+            yeniSatilik = (SatilikEv)evManager.OrtakEvBilgileriGir((int)numOdaSayisi.Value, (int)numKatNumarasi.Value,numAlani.Value, dtYapimTarihi.Value, cbSemti.SelectedItem.ToString()+", "+ cbIli.SelectedItem.ToString(), (Tur)Enum.Parse(typeof(Tur), cbTuru.SelectedItem.ToString()), true, yeniSatilik);
             return yeniSatilik;
         }
         Ev KiralikEvKaydet()
         {
             KiralikEv yeniKiralik = (KiralikEv)evManager.EvOlustur((int)numEmlakNo.Value, numFiyatOrKira.Value, numDepozito.Value);
-            yeniKiralik = (KiralikEv)evManager.OrtakEvBilgileriGir((int)numOdaSayisi.Value, (int)numKatNumarasi.Value, numAlani.Value, dtYapimTarihi.Value, cbSemti.SelectedItem.ToString() + ", " + cbIli.SelectedItem.ToString(), (Tur)Enum.Parse(typeof(Tur), cbTuru.SelectedItem.ToString()), cbAktif.Checked, yeniKiralik);
+            yeniKiralik = (KiralikEv)evManager.OrtakEvBilgileriGir((int)numOdaSayisi.Value, (int)numKatNumarasi.Value, numAlani.Value, dtYapimTarihi.Value, cbSemti.SelectedItem.ToString() + ", " + cbIli.SelectedItem.ToString(), (Tur)Enum.Parse(typeof(Tur), cbTuru.SelectedItem.ToString()), true, yeniKiralik);
             return yeniKiralik;
         }
 
@@ -107,12 +107,25 @@ namespace EmlakOtomasyonu
             lblKiraOrFiyat.Text = kiralikMi ? "Kira (₺)" : "Fiyat (₺)";
             cbFiyatOrKiraAz.Text = kiralikMi ? "Kirası En Az Su Kadar" : "Fiyatı En Az Su Kadar";
             cbFiyatOrKiraFazla.Text = kiralikMi ? "Kirası En Fazla Su Kadar" : "Fiyatı En Fazla Su Kadar";
-            if (kiralikMi)
-                EvleriGoster(evManager.KiralikEvleriGetir());
-            else EvleriGoster(evManager.SatilikEvleriGetir());
+            EvleriFiltrele();
             KayitEkraniSifirla();
         }
-
+        void EvleriFiltrele()
+        {
+            var filtreliList = evManager.EvFiltrele(
+                cbTarihAz.Checked ? dtTarihAz.Value : default(DateTime),
+                cbTarihFazla.Checked ? dtTarihFazla.Value : default(DateTime),
+                cbAlanAz.Checked ? numAlanAz.Value : -1,
+                cbOdaSayisiAz.Checked ? (int)numOdaSayisiAz.Value : -1,
+                cbIldekiler.Checked ? cmbIldekiler.SelectedItem.ToString() : null,
+                cbFiyatOrKiraAz.Checked ? numFiyatOrKiraAz.Value : -1,
+                cbFiyatOrKiraFazla.Checked ? numFiyatOrKiraFazla.Value : -1,
+                cbAktif.Checked,
+                cbKategori.SelectedIndex == 1
+                );
+            EvleriGoster(filtreliList);
+            KayitEkraniSifirla();
+        }
         private void cbIli_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbSemti.Items.Clear();
@@ -122,15 +135,18 @@ namespace EmlakOtomasyonu
         void EvleriGoster(List<Ev> evler)
         {
             listView1.Clear();
-           
+            if (evler.Count == 0) return;
             foreach (string item in evler[0].EvBilgileri().Split('|'))//Kolon isimleri
-                listView1.Columns.Add(item.Split('=')[0]);
+                listView1.Columns.Add(item.Split('=')[0],100);
+            listView1.Columns.RemoveAt(7);
             foreach (var item in evler)
             {
-                string[] datas = item.EvBilgileri().Split('|').Select(x => x.Split('=')[1]).ToArray();
-                var listViewItem = new ListViewItem(datas);
+                string[] data = item.EvBilgileri().Split('|').Select(x => x.Split('=')[1]).ToArray();
+                var listViewItem = new ListViewItem(data);
+                listViewItem.SubItems.RemoveAt(7);
                 listView1.Items.Add(listViewItem);
             }
+
         }
 
         private void listView1_DoubleClick(object sender, EventArgs e)
@@ -145,7 +161,6 @@ namespace EmlakOtomasyonu
             string[] ilVeSemt = seciliEv.Semti.Split(new string[]{", "},StringSplitOptions.None);
             cbIli.SelectedItem = ilVeSemt[1];
             cbSemti.SelectedItem = ilVeSemt[0];
-            cbAktif.Checked = seciliEv.Aktif;
             numFiyatOrKira.Value = (seciliEv is KiralikEv) ? ((KiralikEv)seciliEv).Kira : ((SatilikEv)seciliEv).Fiyat;
             if(seciliEv is KiralikEv)
             numDepozito.Value = ((KiralikEv)seciliEv).Depozito;
@@ -171,7 +186,6 @@ namespace EmlakOtomasyonu
             seciliEv.YapimTarihi = dtYapimTarihi.Value;
             seciliEv.Turu = (Tur)Enum.Parse(typeof(Tur), cbTuru.SelectedItem.ToString());
             seciliEv.Semti=cbSemti.SelectedItem.ToString()+", "+cbIli.SelectedItem.ToString();
-            seciliEv.Aktif = cbAktif.Checked;
             if (seciliEv is SatilikEv)
                 ((SatilikEv)seciliEv).Fiyat = numFiyatOrKira.Value;
             else
@@ -227,53 +241,42 @@ namespace EmlakOtomasyonu
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var filtreliList = evManager.EvFiltrele(
-                
-                cbTarihAz.Checked?dtTarihAz.Value:new DateTime(),
-                cbTarihFazla.Checked?dtTarihFazla.Value:new DateTime(),
-                cbAlanAz.Checked?numAlanAz.Value:-1,
-                cbOdaSayisiAz.Checked?(int)numOdaSayisi.Value:-1,
-                cbIldekiler.Checked?cmbIldekiler.SelectedItem.ToString():null,
-                cbFiyatOrKiraAz.Checked?numFiyatOrKiraAz.Value:-1,
-                cbFiyatOrKiraFazla.Checked?numFiyatOrKiraFazla.Value:-1
-                );
-            EvleriGoster(filtreliList);
-            KayitEkraniSifirla();
+            EvleriFiltrele();
         }
 
         private void cbTarihFazla_CheckedChanged(object sender, EventArgs e)
         {
-            dtTarihFazla.Enabled = ((CheckBox)sender).Checked;
+            dtTarihFazla.Visible = ((CheckBox)sender).Checked;
         }
 
         private void cbTarihAz_CheckedChanged(object sender, EventArgs e)
         {
-            dtTarihAz.Enabled = ((CheckBox)sender).Checked;
+            dtTarihAz.Visible = ((CheckBox)sender).Checked;
         }
 
         private void cbAlanAz_CheckedChanged(object sender, EventArgs e)
         {
-            numAlanAz.Enabled = ((CheckBox)sender).Checked;
+            numAlanAz.Visible = ((CheckBox)sender).Checked;
         }
 
         private void cbOdaSayisiAz_CheckedChanged(object sender, EventArgs e)
         {
-            numOdaSayisiAz.Enabled = ((CheckBox)sender).Checked;
+            numOdaSayisiAz.Visible = ((CheckBox)sender).Checked;
         }
 
         private void cbIldekiler_CheckedChanged(object sender, EventArgs e)
         {
-            cmbIldekiler.Enabled = ((CheckBox)sender).Checked;
+            cmbIldekiler.Visible = ((CheckBox)sender).Checked;
         }
 
         private void cbFiyatOrKiraAz_CheckedChanged(object sender, EventArgs e)
         {
-            numFiyatOrKiraAz.Enabled = ((CheckBox)sender).Checked;
+            numFiyatOrKiraAz.Visible = ((CheckBox)sender).Checked;
         }
 
         private void cbFiyatOrKiraFazla_CheckedChanged(object sender, EventArgs e)
         {
-            numFiyatOrKiraFazla.Enabled = ((CheckBox)sender).Checked;
+            numFiyatOrKiraFazla.Visible = ((CheckBox)sender).Checked;
         }
     }
 }

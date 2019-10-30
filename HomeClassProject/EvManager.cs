@@ -37,7 +37,6 @@ namespace HomeClassProject
                 kiralikEv = (KiralikEv)OrtakEvBilgileriGir(ozellikler, kiralikEv);
             }
         }
-
         private void DosyadanSatilikEvYukle()
         {
             Dosya dosya = Dosya.DosyaGetir("satilik.txt");
@@ -90,7 +89,6 @@ namespace HomeClassProject
                 return newEv;
             }
         }
-
         public Ev EvOlustur(int emlakNumarasi, decimal kira, decimal depozito)
         {
             if (EmlakNumarasiKontrol(emlakNumarasi))
@@ -109,11 +107,13 @@ namespace HomeClassProject
             if (sonuc.Count() > 0) return true;
             else return false;
         }
+
         public Ev EvGetir(int emlakNumarasi)
         {
            List<Ev> sonuc = evList.Where(tempEv => tempEv.EmlakNumarasi == emlakNumarasi).ToList();
             return sonuc[0];
         }
+
         public void EvleriKaydet()
         {
             List<Ev> evs = SatilikEvleriGetir();
@@ -127,42 +127,41 @@ namespace HomeClassProject
             dosya.Guncelle(string.Join("&", evs.Select(ev => ev.EvBilgileri()).ToArray()));
         }
 
-        public List<Ev> EvListele()
+        public List<Ev> EvFiltrele(DateTime dateEnAz, DateTime dateEnFazla, decimal AlanEnAz, int odaSayisiEnAz, string ilAdi, decimal fiyatOrKiraEnAz, decimal fiyatOrKiraEnFazla, bool aktif, bool kiralikMi)
         {
-            return evList;
-        }
-        public List<Ev> EvFiltrele(DateTime dateEnAz, DateTime dateEnFazla, decimal AlanEnAz, int odaSayisiEnAz, string ilAdi, decimal fiyatOrKiraEnAz, decimal fiyatOrKiraEnFazla)
-        {
-            var filtreliList = evList.Where(
-                tempEv =>
-                FiltreleTarihiEnAzSuOlan(tempEv, dateEnAz) &&
-                FiltreleTarihiEnFazlaSuOlan(tempEv, dateEnFazla) &&
-                FiltreleAlaniEnAzSuOlan(tempEv, AlanEnAz) &&
-                FiltreleOdaSayisiEnAzSuOlan(tempEv, odaSayisiEnAz) &&
-                FiltreleIliSuOlan(tempEv, ilAdi) &&
-                (tempEv is KiralikEv) ? FiltreleKiraEnAzSuOlan(tempEv, fiyatOrKiraEnAz) : FiltreleFiyatEnAzSuOlan(tempEv, fiyatOrKiraEnAz) &&
-                (tempEv is KiralikEv) ? FiltreleKiraEnFazlaSuOlan(tempEv, fiyatOrKiraEnFazla) : FiltreleFiyatEnFazlaSuOlan(tempEv, fiyatOrKiraEnFazla)
-                ).ToList();
+            var list = kiralikMi ? KiralikEvleriGetir() : SatilikEvleriGetir(); 
+              var  filtreliList = list.Where(tempEv =>
+                FiltreleTarihiEnAzSuOlan(tempEv, dateEnAz))
+                .Where(tempEv => FiltreleTarihiEnFazlaSuOlan(tempEv, dateEnFazla))
+                .Where(tempEv => FiltreleAlaniEnAzSuOlan(tempEv, AlanEnAz))
+                .Where(tempEv => FiltreleOdaSayisiEnAzSuOlan(tempEv, odaSayisiEnAz))
+                .Where(tempEv => FiltreleIliSuOlan(tempEv, ilAdi))
+                .Where(tempEv => (tempEv is KiralikEv) ? FiltreleKiraEnAzSuOlan(tempEv, fiyatOrKiraEnAz) : FiltreleFiyatEnAzSuOlan(tempEv, fiyatOrKiraEnAz))
+                .Where(tempEv => (tempEv is KiralikEv) ? FiltreleKiraEnFazlaSuOlan(tempEv, fiyatOrKiraEnFazla) : FiltreleFiyatEnFazlaSuOlan(tempEv, fiyatOrKiraEnFazla))
+                .Where(tempEv=> tempEv.Aktif==aktif)
+                .ToList();
             return filtreliList;
         }
-        public List<Ev> KiralikEvleriGetir()
+
+        private List<Ev> KiralikEvleriGetir()
         {
             return evList.Where(tempEv => tempEv is KiralikEv).ToList();
         }
-        public List<Ev> SatilikEvleriGetir()
+        private List<Ev> SatilikEvleriGetir()
         {
             return evList.Where(tempEv => tempEv is SatilikEv).ToList();
         }
-        private bool FiltreleTarihiEnAzSuOlan(Ev ev, DateTime date)//calisti
+
+        private bool FiltreleTarihiEnAzSuOlan(Ev ev, DateTime date)
         {
-            if (date == null)
+            if (date == default(DateTime))
                 return true;
             else 
                 return ev.YapimTarihi >= date;
         }
-        private bool FiltreleTarihiEnFazlaSuOlan(Ev ev, DateTime date)//calisti
+        private bool FiltreleTarihiEnFazlaSuOlan(Ev ev, DateTime date)
         {
-            if (date == null)
+            if (date == default(DateTime))
                 return true;
             else
                 return ev.YapimTarihi <= date;
@@ -191,7 +190,7 @@ namespace HomeClassProject
                 return il.Equals(ilAdi);
             }
         }
-        private bool FiltreleFiyatEnAzSuOlan(Ev ev, decimal fiyat)//calisti
+        private bool FiltreleFiyatEnAzSuOlan(Ev ev, decimal fiyat)
         {
             if (fiyat == -1)
                 return true;
@@ -212,13 +211,14 @@ namespace HomeClassProject
             else
                 return ((KiralikEv)ev).Kira >= kira;
         }
-        private bool FiltreleKiraEnFazlaSuOlan(Ev ev, decimal kira)//calisti
+        private bool FiltreleKiraEnFazlaSuOlan(Ev ev, decimal kira)
         {
             if (kira == -1)
                 return true;
             else
                 return ((KiralikEv)ev).Kira <= kira;
         }
+
         public void EvGuncelle(Ev ev)
         {
             evList.Where(tempEv => tempEv.Equals(ev)).ToList()[0] = ev;
@@ -228,6 +228,7 @@ namespace HomeClassProject
         {
             evList.Remove(ev);
         }
+
         public void EvArsivle(Ev ev)
         {
             ev.Aktif = false;

@@ -13,7 +13,7 @@ namespace EmlakOtomasyonu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AnaForm());
+            Application.Run(new Login());
         }
     }
 }

@@ -75,6 +75,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MediaPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MediaPlayer.Designer.cs">
+      <DependentUpon>MediaPlayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnaForm.resx">
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MediaPlayer.resx">
+      <DependentUpon>MediaPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,6 +150,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-archive-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-image-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-left-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-right-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using HomeClassProject;
 using System.Linq;
 using System.Drawing;
+using System.IO;
 
 namespace EmlakOtomasyonu
 {
@@ -15,13 +16,15 @@ namespace EmlakOtomasyonu
         }
         EvManager evManager = EvManager.Instance;
         Ev seciliEv;
+        string[] seciliResimler;
         private void AnaForm_Load(object sender, EventArgs e)
         {
             TurYukle();
             cbKategori.SelectedIndex = 0;
             cbIli.Items.AddRange(SemtManager.Instance.IlleriGetir());
             cbIli.SelectedIndex = 0;
-            
+            cmbIldekiler.Items.AddRange(SemtManager.Instance.IlleriGetir());
+            cmbIldekiler.SelectedIndex = 0;
         }
 
         private void AnaForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -38,9 +41,19 @@ namespace EmlakOtomasyonu
                 return;
             }
             if (cbKategori.SelectedIndex == 0)
-                SatilikEvKaydet();
-            else KiralikEvKaydet();
+                ResimKaydet(SatilikEvKaydet());
+            else ResimKaydet(KiralikEvKaydet());
             Kaydedildi();
+            
+        }
+        void ResimKaydet(Ev yeniEv)
+        { if (seciliResimler.Length == 0) return;
+            string picPath = Application.StartupPath + "\\Resimler\\" + yeniEv.EmlakNumarasi;
+            if (!Directory.Exists(picPath))
+            Directory.CreateDirectory(picPath);
+            int i = 0;
+            foreach (var item in seciliResimler)
+                File.Copy(item, picPath + "\\" +yeniEv.EmlakNumarasi+"_"+(i++));
             
         }
         void Kaydedildi()
@@ -62,18 +75,22 @@ namespace EmlakOtomasyonu
             }
             tblDuzenle.Visible = false;
             btnKaydet.Visible = true;
+            lblResimSec.Visible = true;
+            seciliResimler=new string[0];
             dtYapimTarihi.Value = DateTime.Now;
         }
 
-        void SatilikEvKaydet()
+        Ev SatilikEvKaydet()
         {
             SatilikEv yeniSatilik = (SatilikEv)evManager.EvOlustur((int)numEmlakNo.Value, numFiyatOrKira.Value);
             yeniSatilik = (SatilikEv)evManager.OrtakEvBilgileriGir((int)numOdaSayisi.Value, (int)numKatNumarasi.Value,numAlani.Value, dtYapimTarihi.Value, cbSemti.SelectedItem.ToString()+", "+ cbIli.SelectedItem.ToString(), (Tur)Enum.Parse(typeof(Tur), cbTuru.SelectedItem.ToString()), cbAktif.Checked, yeniSatilik);
+            return yeniSatilik;
         }
-        void KiralikEvKaydet()
+        Ev KiralikEvKaydet()
         {
             KiralikEv yeniKiralik = (KiralikEv)evManager.EvOlustur((int)numEmlakNo.Value, numFiyatOrKira.Value, numDepozito.Value);
             yeniKiralik = (KiralikEv)evManager.OrtakEvBilgileriGir((int)numOdaSayisi.Value, (int)numKatNumarasi.Value, numAlani.Value, dtYapimTarihi.Value, cbSemti.SelectedItem.ToString() + ", " + cbIli.SelectedItem.ToString(), (Tur)Enum.Parse(typeof(Tur), cbTuru.SelectedItem.ToString()), cbAktif.Checked, yeniKiralik);
+            return yeniKiralik;
         }
 
         void TurYukle()
@@ -134,6 +151,8 @@ namespace EmlakOtomasyonu
             btnArsivle.BackColor = seciliEv.Aktif ? Color.LightSalmon : Color.GreenYellow;
             tblDuzenle.Visible = true;
             btnKaydet.Visible = false;
+            lblResimler.Text = "";
+            lblResimSec.Visible = false;
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -173,6 +192,75 @@ namespace EmlakOtomasyonu
         {
             seciliEv.Aktif = !seciliEv.Aktif;
             Kaydedildi();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string picPath = Application.StartupPath + "\\Resimler\\" + seciliEv.EmlakNumarasi;
+            if (Directory.Exists(picPath))
+            {
+                MediaPlayer media = new MediaPlayer(picPath);
+                media.ShowDialog();
+            }
+            else MessageBox.Show("Bu ile ilgili resim bulunamadi.", "Oops...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            seciliResimler = openFileDialog1.FileNames;
+            lblResimler.Text = openFileDialog1.FileNames.Length + " resim secildi.";
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Kaydedildi();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTarihFazla_CheckedChanged(object sender, EventArgs e)
+        {
+            dtTarihFazla.Enabled = ((CheckBox)sender).Checked;
+        }
+
+        private void cbTarihAz_CheckedChanged(object sender, EventArgs e)
+        {
+            dtTarihAz.Enabled = ((CheckBox)sender).Checked;
+        }
+
+        private void cbAlanAz_CheckedChanged(object sender, EventArgs e)
+        {
+            numAlanAz.Enabled = ((CheckBox)sender).Checked;
+        }
+
+        private void cbOdaSayisiAz_CheckedChanged(object sender, EventArgs e)
+        {
+            numOdaSayisiAz.Enabled = ((CheckBox)sender).Checked;
+        }
+
+        private void cbIldekiler_CheckedChanged(object sender, EventArgs e)
+        {
+            cmbIldekiler.Enabled = ((CheckBox)sender).Checked;
+        }
+
+        private void cbFiyatOrKiraAz_CheckedChanged(object sender, EventArgs e)
+        {
+            numFiyatOrKiraAz.Enabled = ((CheckBox)sender).Checked;
+        }
+
+        private void cbFiyatOrKiraFazla_CheckedChanged(object sender, EventArgs e)
+        {
+            numFiyatOrKiraFazla.Enabled = ((CheckBox)sender).Checked;
         }
     }
 }

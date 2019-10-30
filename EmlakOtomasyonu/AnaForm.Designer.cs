@@ -30,15 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaForm));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.cbKategori = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tblKayit = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbSemti = new System.Windows.Forms.ComboBox();
             this.cbIli = new System.Windows.Forms.ComboBox();
             this.lblKiraOrFiyat = new System.Windows.Forms.Label();
@@ -49,83 +50,60 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dtYapimTarihi = new System.Windows.Forms.DateTimePicker();
             this.cbTuru = new System.Windows.Forms.ComboBox();
             this.numAlani = new System.Windows.Forms.NumericUpDown();
-            this.numDepozito = new System.Windows.Forms.NumericUpDown();
-            this.lblDepozito = new System.Windows.Forms.Label();
-            this.cbAktif = new System.Windows.Forms.CheckBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tblDuzenle = new System.Windows.Forms.TableLayoutPanel();
-            this.btnKaydet = new System.Windows.Forms.Button();
+            this.cbAktif = new System.Windows.Forms.CheckBox();
+            this.lblDepozito = new System.Windows.Forms.Label();
+            this.numDepozito = new System.Windows.Forms.NumericUpDown();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbTarihFazla = new System.Windows.Forms.CheckBox();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lblResimSec = new System.Windows.Forms.Label();
+            this.lblResimler = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnArsivle = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.cbTarihAz = new System.Windows.Forms.CheckBox();
+            this.cbAlanAz = new System.Windows.Forms.CheckBox();
+            this.cbOdaSayisiAz = new System.Windows.Forms.CheckBox();
+            this.dtTarihFazla = new System.Windows.Forms.DateTimePicker();
+            this.dtTarihAz = new System.Windows.Forms.DateTimePicker();
+            this.cbIldekiler = new System.Windows.Forms.CheckBox();
+            this.cbFiyatOrKiraAz = new System.Windows.Forms.CheckBox();
+            this.cbFiyatOrKiraFazla = new System.Windows.Forms.CheckBox();
+            this.numFiyatOrKiraFazla = new System.Windows.Forms.NumericUpDown();
+            this.numFiyatOrKiraAz = new System.Windows.Forms.NumericUpDown();
+            this.cmbIldekiler = new System.Windows.Forms.ComboBox();
+            this.numOdaSayisiAz = new System.Windows.Forms.NumericUpDown();
+            this.numAlanAz = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tblKayit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFiyatOrKira)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEmlakNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOdaSayisi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numKatNumarasi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAlani)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDepozito)).BeginInit();
             this.tblDuzenle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDepozito)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numFiyatOrKiraFazla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFiyatOrKiraAz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numOdaSayisiAz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAlanAz)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.ImageList = this.ımageList1;
-            this.tabControl1.ItemSize = new System.Drawing.Size(100, 30);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.ShowToolTips = true;
-            this.tabControl1.Size = new System.Drawing.Size(722, 712);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.MintCream;
-            this.tabPage1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.tabPage1.ImageKey = "home";
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1233, 697);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Ana Sayfa";
-            this.tabPage1.ToolTipText = "Ana sayfa";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.MintCream;
-            this.tabPage2.ForeColor = System.Drawing.Color.LimeGreen;
-            this.tabPage2.ImageKey = "edit";
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(714, 674);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Duzenle";
-            this.tabPage2.ToolTipText = "Ev ekleme, silme ve duzenleme islemlerini yapabilirsiniz.";
             // 
             // tableLayoutPanel1
             // 
@@ -133,21 +111,22 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.6408F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(750, 174);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.531746F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.46825F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1100, 616);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1320, 836);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.BackColor = System.Drawing.Color.Azure;
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.96847F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.03152F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.744939F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.25506F));
             this.tableLayoutPanel4.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.cbKategori, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -155,7 +134,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1094, 46);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1314, 65);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // label8
@@ -164,9 +143,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Green;
-            this.label8.Location = new System.Drawing.Point(3, 10);
+            this.label8.Location = new System.Drawing.Point(3, 20);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(267, 25);
+            this.label8.Size = new System.Drawing.Size(108, 25);
             this.label8.TabIndex = 13;
             this.label8.Text = "Ev Kategorisi";
             // 
@@ -182,7 +161,7 @@
             this.cbKategori.Items.AddRange(new object[] {
             "Satılık Ev",
             "Kiralık Ev"});
-            this.cbKategori.Location = new System.Drawing.Point(276, 6);
+            this.cbKategori.Location = new System.Drawing.Point(117, 22);
             this.cbKategori.Name = "cbKategori";
             this.cbKategori.Size = new System.Drawing.Size(212, 21);
             this.cbKategori.TabIndex = 14;
@@ -193,26 +172,73 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.79115F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.20885F));
-            this.tableLayoutPanel2.Controls.Add(this.tblKayit, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.listView1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 55);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 74);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.87878F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.87879F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.12121F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1094, 558);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1314, 759);
             this.tableLayoutPanel2.TabIndex = 25;
+            // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.Color.Azure;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.FullRowSelect = true;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 3);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(713, 661);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 667);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(475, 39);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Bilgilendirme\r\n*Ev bigilerini düzenlemek, arsivlemek, etkinlestirmek ya da silmek" +
+    " için herhangi bir eve çift tıklayın. \r\n**Yeni ev kaydetmek için tüm bilgileri d" +
+    "oldurup Kaydet butonuna tıklayın.";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.tblKayit, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(722, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.25265F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.74735F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(589, 661);
+            this.tableLayoutPanel3.TabIndex = 3;
             // 
             // tblKayit
             // 
+            this.tblKayit.BackColor = System.Drawing.Color.Azure;
             this.tblKayit.ColumnCount = 5;
             this.tblKayit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tblKayit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tblKayit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tblKayit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tblKayit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblKayit.Controls.Add(this.label1, 0, 0);
+            this.tblKayit.Controls.Add(this.tblDuzenle, 0, 5);
             this.tblKayit.Controls.Add(this.cbSemti, 4, 2);
             this.tblKayit.Controls.Add(this.cbIli, 3, 2);
             this.tblKayit.Controls.Add(this.lblKiraOrFiyat, 2, 3);
@@ -223,7 +249,6 @@
             this.tblKayit.Controls.Add(this.label7, 2, 2);
             this.tblKayit.Controls.Add(this.label6, 2, 1);
             this.tblKayit.Controls.Add(this.label5, 2, 0);
-            this.tblKayit.Controls.Add(this.label1, 0, 0);
             this.tblKayit.Controls.Add(this.label2, 0, 1);
             this.tblKayit.Controls.Add(this.label3, 0, 2);
             this.tblKayit.Controls.Add(this.label4, 0, 3);
@@ -231,22 +256,36 @@
             this.tblKayit.Controls.Add(this.cbTuru, 3, 1);
             this.tblKayit.Controls.Add(this.numAlani, 1, 3);
             this.tblKayit.Controls.Add(this.btnKaydet, 4, 5);
-            this.tblKayit.Controls.Add(this.tblDuzenle, 0, 5);
-            this.tblKayit.Controls.Add(this.cbAktif, 4, 4);
             this.tblKayit.Controls.Add(this.lblDepozito, 0, 4);
             this.tblKayit.Controls.Add(this.numDepozito, 1, 4);
+            this.tblKayit.Controls.Add(this.cbAktif, 4, 3);
+            this.tblKayit.Controls.Add(this.lblResimSec, 2, 4);
+            this.tblKayit.Controls.Add(this.lblResimler, 3, 4);
             this.tblKayit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblKayit.Location = new System.Drawing.Point(602, 3);
+            this.tblKayit.Location = new System.Drawing.Point(3, 354);
             this.tblKayit.Name = "tblKayit";
             this.tblKayit.RowCount = 6;
-            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tblKayit.Size = new System.Drawing.Size(489, 484);
+            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14F));
+            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14F));
+            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14F));
+            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14F));
+            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14F));
+            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tblKayit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblKayit.Size = new System.Drawing.Size(583, 304);
             this.tblKayit.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Green;
+            this.label1.Location = new System.Drawing.Point(3, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 25);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Emlak No";
             // 
             // cbSemti
             // 
@@ -258,9 +297,9 @@
             this.cbSemti.ForeColor = System.Drawing.Color.Green;
             this.cbSemti.FormattingEnabled = true;
             this.cbSemti.IntegralHeight = false;
-            this.cbSemti.Location = new System.Drawing.Point(391, 183);
+            this.cbSemti.Location = new System.Drawing.Point(467, 94);
             this.cbSemti.Name = "cbSemti";
-            this.cbSemti.Size = new System.Drawing.Size(95, 21);
+            this.cbSemti.Size = new System.Drawing.Size(113, 21);
             this.cbSemti.TabIndex = 14;
             // 
             // cbIli
@@ -273,9 +312,9 @@
             this.cbIli.ForeColor = System.Drawing.Color.Green;
             this.cbIli.FormattingEnabled = true;
             this.cbIli.IntegralHeight = false;
-            this.cbIli.Location = new System.Drawing.Point(294, 183);
+            this.cbIli.Location = new System.Drawing.Point(351, 94);
             this.cbIli.Name = "cbIli";
-            this.cbIli.Size = new System.Drawing.Size(91, 21);
+            this.cbIli.Size = new System.Drawing.Size(110, 21);
             this.cbIli.TabIndex = 13;
             this.cbIli.SelectedIndexChanged += new System.EventHandler(this.cbIli_SelectedIndexChanged);
             // 
@@ -285,9 +324,9 @@
             this.lblKiraOrFiyat.AutoSize = true;
             this.lblKiraOrFiyat.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKiraOrFiyat.ForeColor = System.Drawing.Color.Green;
-            this.lblKiraOrFiyat.Location = new System.Drawing.Point(197, 267);
+            this.lblKiraOrFiyat.Location = new System.Drawing.Point(235, 134);
             this.lblKiraOrFiyat.Name = "lblKiraOrFiyat";
-            this.lblKiraOrFiyat.Size = new System.Drawing.Size(91, 25);
+            this.lblKiraOrFiyat.Size = new System.Drawing.Size(110, 25);
             this.lblKiraOrFiyat.TabIndex = 20;
             this.lblKiraOrFiyat.Text = "Fiyatı";
             // 
@@ -298,14 +337,14 @@
             this.numFiyatOrKira.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numFiyatOrKira.DecimalPlaces = 2;
             this.numFiyatOrKira.ForeColor = System.Drawing.Color.Green;
-            this.numFiyatOrKira.Location = new System.Drawing.Point(294, 272);
+            this.numFiyatOrKira.Location = new System.Drawing.Point(351, 139);
             this.numFiyatOrKira.Maximum = new decimal(new int[] {
             100000000,
             0,
             0,
             0});
             this.numFiyatOrKira.Name = "numFiyatOrKira";
-            this.numFiyatOrKira.Size = new System.Drawing.Size(91, 16);
+            this.numFiyatOrKira.Size = new System.Drawing.Size(110, 16);
             this.numFiyatOrKira.TabIndex = 21;
             // 
             // numEmlakNo
@@ -314,14 +353,14 @@
             this.numEmlakNo.BackColor = System.Drawing.Color.GreenYellow;
             this.numEmlakNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numEmlakNo.ForeColor = System.Drawing.Color.Green;
-            this.numEmlakNo.Location = new System.Drawing.Point(100, 32);
+            this.numEmlakNo.Location = new System.Drawing.Point(119, 13);
             this.numEmlakNo.Maximum = new decimal(new int[] {
             100000000,
             0,
             0,
             0});
             this.numEmlakNo.Name = "numEmlakNo";
-            this.numEmlakNo.Size = new System.Drawing.Size(91, 16);
+            this.numEmlakNo.Size = new System.Drawing.Size(110, 16);
             this.numEmlakNo.TabIndex = 19;
             // 
             // numOdaSayisi
@@ -330,14 +369,14 @@
             this.numOdaSayisi.BackColor = System.Drawing.Color.GreenYellow;
             this.numOdaSayisi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numOdaSayisi.ForeColor = System.Drawing.Color.Green;
-            this.numOdaSayisi.Location = new System.Drawing.Point(100, 112);
+            this.numOdaSayisi.Location = new System.Drawing.Point(119, 55);
             this.numOdaSayisi.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numOdaSayisi.Name = "numOdaSayisi";
-            this.numOdaSayisi.Size = new System.Drawing.Size(91, 16);
+            this.numOdaSayisi.Size = new System.Drawing.Size(110, 16);
             this.numOdaSayisi.TabIndex = 18;
             this.numOdaSayisi.Value = new decimal(new int[] {
             1,
@@ -351,14 +390,14 @@
             this.numKatNumarasi.BackColor = System.Drawing.Color.GreenYellow;
             this.numKatNumarasi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numKatNumarasi.ForeColor = System.Drawing.Color.Green;
-            this.numKatNumarasi.Location = new System.Drawing.Point(100, 192);
+            this.numKatNumarasi.Location = new System.Drawing.Point(119, 97);
             this.numKatNumarasi.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
             this.numKatNumarasi.Name = "numKatNumarasi";
-            this.numKatNumarasi.Size = new System.Drawing.Size(91, 16);
+            this.numKatNumarasi.Size = new System.Drawing.Size(110, 16);
             this.numKatNumarasi.TabIndex = 17;
             // 
             // label7
@@ -367,9 +406,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Green;
-            this.label7.Location = new System.Drawing.Point(197, 187);
+            this.label7.Location = new System.Drawing.Point(235, 92);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 25);
+            this.label7.Size = new System.Drawing.Size(110, 25);
             this.label7.TabIndex = 13;
             this.label7.Text = "Semti";
             // 
@@ -379,9 +418,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Green;
-            this.label6.Location = new System.Drawing.Point(197, 107);
+            this.label6.Location = new System.Drawing.Point(235, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 25);
+            this.label6.Size = new System.Drawing.Size(110, 25);
             this.label6.TabIndex = 11;
             this.label6.Text = "Türü";
             // 
@@ -391,22 +430,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Green;
-            this.label5.Location = new System.Drawing.Point(197, 27);
+            this.label5.Location = new System.Drawing.Point(235, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 25);
+            this.label5.Size = new System.Drawing.Size(110, 25);
             this.label5.TabIndex = 9;
             this.label5.Text = "Yapım Tarihi";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(3, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Emlak No";
             // 
             // label2
             // 
@@ -414,9 +442,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(3, 107);
+            this.label2.Location = new System.Drawing.Point(3, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 25);
+            this.label2.Size = new System.Drawing.Size(110, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Oda Sayısı";
             // 
@@ -426,9 +454,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Green;
-            this.label3.Location = new System.Drawing.Point(3, 175);
+            this.label3.Location = new System.Drawing.Point(3, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 50);
+            this.label3.Size = new System.Drawing.Size(110, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Kat Numarası";
             // 
@@ -438,9 +466,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Green;
-            this.label4.Location = new System.Drawing.Point(3, 267);
+            this.label4.Location = new System.Drawing.Point(3, 134);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 25);
+            this.label4.Size = new System.Drawing.Size(110, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "Alanı (m²)";
             // 
@@ -455,10 +483,10 @@
             this.dtYapimTarihi.CalendarTrailingForeColor = System.Drawing.Color.Green;
             this.tblKayit.SetColumnSpan(this.dtYapimTarihi, 2);
             this.dtYapimTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtYapimTarihi.Location = new System.Drawing.Point(294, 30);
+            this.dtYapimTarihi.Location = new System.Drawing.Point(351, 11);
             this.dtYapimTarihi.MaxDate = new System.DateTime(2100, 1, 1, 0, 0, 0, 0);
             this.dtYapimTarihi.Name = "dtYapimTarihi";
-            this.dtYapimTarihi.Size = new System.Drawing.Size(192, 20);
+            this.dtYapimTarihi.Size = new System.Drawing.Size(229, 20);
             this.dtYapimTarihi.TabIndex = 10;
             this.dtYapimTarihi.Value = new System.DateTime(2019, 10, 29, 2, 4, 15, 0);
             // 
@@ -466,16 +494,15 @@
             // 
             this.cbTuru.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTuru.BackColor = System.Drawing.Color.GreenYellow;
-            this.tblKayit.SetColumnSpan(this.cbTuru, 2);
             this.cbTuru.DropDownHeight = 100;
             this.cbTuru.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTuru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTuru.ForeColor = System.Drawing.Color.Green;
             this.cbTuru.FormattingEnabled = true;
             this.cbTuru.IntegralHeight = false;
-            this.cbTuru.Location = new System.Drawing.Point(294, 103);
+            this.cbTuru.Location = new System.Drawing.Point(351, 52);
             this.cbTuru.Name = "cbTuru";
-            this.cbTuru.Size = new System.Drawing.Size(192, 21);
+            this.cbTuru.Size = new System.Drawing.Size(110, 21);
             this.cbTuru.TabIndex = 12;
             // 
             // numAlani
@@ -485,7 +512,7 @@
             this.numAlani.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numAlani.DecimalPlaces = 2;
             this.numAlani.ForeColor = System.Drawing.Color.Green;
-            this.numAlani.Location = new System.Drawing.Point(100, 272);
+            this.numAlani.Location = new System.Drawing.Point(119, 139);
             this.numAlani.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -497,7 +524,7 @@
             0,
             0});
             this.numAlani.Name = "numAlani";
-            this.numAlani.Size = new System.Drawing.Size(91, 16);
+            this.numAlani.Size = new System.Drawing.Size(110, 16);
             this.numAlani.TabIndex = 16;
             this.numAlani.Value = new decimal(new int[] {
             10,
@@ -505,34 +532,29 @@
             0,
             0});
             // 
-            // numDepozito
+            // tblDuzenle
             // 
-            this.numDepozito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.numDepozito.BackColor = System.Drawing.Color.GreenYellow;
-            this.numDepozito.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numDepozito.DecimalPlaces = 2;
-            this.numDepozito.ForeColor = System.Drawing.Color.Green;
-            this.numDepozito.Location = new System.Drawing.Point(100, 352);
-            this.numDepozito.Maximum = new decimal(new int[] {
-            100000000,
-            0,
-            0,
-            0});
-            this.numDepozito.Name = "numDepozito";
-            this.numDepozito.Size = new System.Drawing.Size(91, 16);
-            this.numDepozito.TabIndex = 23;
-            // 
-            // lblDepozito
-            // 
-            this.lblDepozito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDepozito.AutoSize = true;
-            this.lblDepozito.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepozito.ForeColor = System.Drawing.Color.Green;
-            this.lblDepozito.Location = new System.Drawing.Point(3, 347);
-            this.lblDepozito.Name = "lblDepozito";
-            this.lblDepozito.Size = new System.Drawing.Size(91, 25);
-            this.lblDepozito.TabIndex = 22;
-            this.lblDepozito.Text = "Depozitosu";
+            this.tblDuzenle.BackColor = System.Drawing.Color.Azure;
+            this.tblDuzenle.ColumnCount = 5;
+            this.tblKayit.SetColumnSpan(this.tblDuzenle, 4);
+            this.tblDuzenle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblDuzenle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblDuzenle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblDuzenle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblDuzenle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblDuzenle.Controls.Add(this.button2, 4, 0);
+            this.tblDuzenle.Controls.Add(this.button1, 3, 0);
+            this.tblDuzenle.Controls.Add(this.btnSil, 1, 0);
+            this.tblDuzenle.Controls.Add(this.btnArsivle, 0, 0);
+            this.tblDuzenle.Controls.Add(this.btnGuncelle, 2, 0);
+            this.tblDuzenle.Location = new System.Drawing.Point(0, 210);
+            this.tblDuzenle.Margin = new System.Windows.Forms.Padding(0);
+            this.tblDuzenle.Name = "tblDuzenle";
+            this.tblDuzenle.RowCount = 1;
+            this.tblDuzenle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblDuzenle.Size = new System.Drawing.Size(433, 83);
+            this.tblDuzenle.TabIndex = 26;
+            this.tblDuzenle.Visible = false;
             // 
             // cbAktif
             // 
@@ -541,57 +563,91 @@
             this.cbAktif.Checked = true;
             this.cbAktif.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbAktif.ForeColor = System.Drawing.Color.Green;
-            this.cbAktif.Location = new System.Drawing.Point(391, 351);
+            this.cbAktif.Location = new System.Drawing.Point(467, 138);
             this.cbAktif.Name = "cbAktif";
-            this.cbAktif.Size = new System.Drawing.Size(95, 17);
+            this.cbAktif.Size = new System.Drawing.Size(113, 17);
             this.cbAktif.TabIndex = 24;
             this.cbAktif.Text = "Aktif";
             this.cbAktif.UseVisualStyleBackColor = true;
             this.cbAktif.Visible = false;
             // 
-            // listView1
+            // lblDepozito
             // 
-            this.listView1.BackColor = System.Drawing.Color.Azure;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.FullRowSelect = true;
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(593, 484);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            this.lblDepozito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDepozito.AutoSize = true;
+            this.lblDepozito.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepozito.ForeColor = System.Drawing.Color.Green;
+            this.lblDepozito.Location = new System.Drawing.Point(3, 176);
+            this.lblDepozito.Name = "lblDepozito";
+            this.lblDepozito.Size = new System.Drawing.Size(110, 25);
+            this.lblDepozito.TabIndex = 22;
+            this.lblDepozito.Text = "Depozitosu";
             // 
-            // tabPage3
+            // numDepozito
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.MintCream;
-            this.tabPage3.ForeColor = System.Drawing.Color.LimeGreen;
-            this.tabPage3.ImageKey = "filter";
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1233, 697);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Sorgula";
-            this.tabPage3.ToolTipText = "Tum filtreleme islemlerini buradan yapabilirsiniz.";
+            this.numDepozito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numDepozito.BackColor = System.Drawing.Color.GreenYellow;
+            this.numDepozito.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numDepozito.DecimalPlaces = 2;
+            this.numDepozito.ForeColor = System.Drawing.Color.Green;
+            this.numDepozito.Location = new System.Drawing.Point(119, 181);
+            this.numDepozito.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.numDepozito.Name = "numDepozito";
+            this.numDepozito.Size = new System.Drawing.Size(110, 16);
+            this.numDepozito.TabIndex = 23;
             // 
-            // tabPage4
+            // tableLayoutPanel5
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.MintCream;
-            this.tabPage4.ForeColor = System.Drawing.Color.LimeGreen;
-            this.tabPage4.ImageKey = "users-settings";
-            this.tabPage4.Location = new System.Drawing.Point(4, 34);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1233, 697);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Kullanici Islemleri";
-            this.tabPage4.ToolTipText = "Bu uygulamayi kullanan kullanicilari gorebilir, herhangi birini silebilir veya ye" +
-    "ni kullanici ekleyebilirsiniz,";
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.Azure;
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.dtTarihAz, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.cbTarihFazla, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.cbTarihAz, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.cbAlanAz, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.cbOdaSayisiAz, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.dtTarihFazla, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.cbIldekiler, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.cbFiyatOrKiraAz, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.cbFiyatOrKiraFazla, 0, 6);
+            this.tableLayoutPanel5.Controls.Add(this.numFiyatOrKiraFazla, 1, 6);
+            this.tableLayoutPanel5.Controls.Add(this.numFiyatOrKiraAz, 1, 5);
+            this.tableLayoutPanel5.Controls.Add(this.cmbIldekiler, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(this.numOdaSayisiAz, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.numAlanAz, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.button3, 0, 7);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 8;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(583, 345);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // cbTarihFazla
+            // 
+            this.cbTarihFazla.AutoSize = true;
+            this.cbTarihFazla.Font = new System.Drawing.Font("Dubai Light", 11.25F);
+            this.cbTarihFazla.ForeColor = System.Drawing.Color.Green;
+            this.cbTarihFazla.Location = new System.Drawing.Point(3, 3);
+            this.cbTarihFazla.Name = "cbTarihFazla";
+            this.cbTarihFazla.Size = new System.Drawing.Size(219, 29);
+            this.cbTarihFazla.TabIndex = 0;
+            this.cbTarihFazla.Text = "Yapım Tarihi En Fazla Su Kadar";
+            this.cbTarihFazla.UseVisualStyleBackColor = true;
+            this.cbTarihFazla.CheckedChanged += new System.EventHandler(this.cbTarihFazla_CheckedChanged);
             // 
             // ımageList1
             // 
@@ -602,50 +658,87 @@
             this.ımageList1.Images.SetKeyName(2, "filter");
             this.ımageList1.Images.SetKeyName(3, "users-settings");
             // 
-            // tblDuzenle
+            // openFileDialog1
             // 
-            this.tblDuzenle.BackColor = System.Drawing.Color.MintCream;
-            this.tblDuzenle.ColumnCount = 3;
-            this.tblKayit.SetColumnSpan(this.tblDuzenle, 3);
-            this.tblDuzenle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblDuzenle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblDuzenle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblDuzenle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblDuzenle.Controls.Add(this.btnSil, 1, 0);
-            this.tblDuzenle.Controls.Add(this.btnArsivle, 0, 0);
-            this.tblDuzenle.Controls.Add(this.btnGuncelle, 2, 0);
-            this.tblDuzenle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblDuzenle.Location = new System.Drawing.Point(3, 403);
-            this.tblDuzenle.Name = "tblDuzenle";
-            this.tblDuzenle.RowCount = 1;
-            this.tblDuzenle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblDuzenle.Size = new System.Drawing.Size(285, 78);
-            this.tblDuzenle.TabIndex = 26;
-            this.tblDuzenle.Visible = false;
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Resim Dosyası |*.png;*.jpeg;*.jpg";
+            this.openFileDialog1.Multiselect = true;
+            this.openFileDialog1.ShowReadOnly = true;
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // btnKaydet
+            // lblResimSec
             // 
-            this.btnKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKaydet.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnKaydet.FlatAppearance.BorderSize = 0;
-            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKaydet.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKaydet.ForeColor = System.Drawing.Color.Green;
-            this.btnKaydet.Image = global::EmlakOtomasyonu.Properties.Resources.icons8_save_32;
-            this.btnKaydet.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnKaydet.Location = new System.Drawing.Point(391, 403);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(95, 78);
-            this.btnKaydet.TabIndex = 15;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnKaydet.UseVisualStyleBackColor = false;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            this.lblResimSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblResimSec.AutoSize = true;
+            this.lblResimSec.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResimSec.ForeColor = System.Drawing.Color.Green;
+            this.lblResimSec.Location = new System.Drawing.Point(235, 176);
+            this.lblResimSec.Name = "lblResimSec";
+            this.lblResimSec.Size = new System.Drawing.Size(110, 25);
+            this.lblResimSec.TabIndex = 28;
+            this.lblResimSec.Text = "Resim Seç";
+            this.lblResimSec.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // lblResimler
+            // 
+            this.lblResimler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblResimler.AutoSize = true;
+            this.tblKayit.SetColumnSpan(this.lblResimler, 2);
+            this.lblResimler.Font = new System.Drawing.Font("Dubai Light", 11F);
+            this.lblResimler.ForeColor = System.Drawing.Color.Green;
+            this.lblResimler.Location = new System.Drawing.Point(351, 176);
+            this.lblResimler.Name = "lblResimler";
+            this.lblResimler.Size = new System.Drawing.Size(229, 25);
+            this.lblResimler.TabIndex = 29;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.GreenYellow;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Green;
+            this.button2.Image = global::EmlakOtomasyonu.Properties.Resources.icons8_cancel_32;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(347, 6);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(83, 77);
+            this.button2.TabIndex = 29;
+            this.button2.Text = "Iptal";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.GreenYellow;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Green;
+            this.button1.Image = global::EmlakOtomasyonu.Properties.Resources.icons8_image_32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(261, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 77);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Resimler";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnSil
             // 
-            this.btnSil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSil.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSil.BackColor = System.Drawing.Color.OrangeRed;
             this.btnSil.FlatAppearance.BorderSize = 0;
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -653,9 +746,10 @@
             this.btnSil.ForeColor = System.Drawing.Color.Green;
             this.btnSil.Image = global::EmlakOtomasyonu.Properties.Resources.icons8_remove_32;
             this.btnSil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSil.Location = new System.Drawing.Point(97, 3);
+            this.btnSil.Location = new System.Drawing.Point(89, 6);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(88, 72);
+            this.btnSil.Size = new System.Drawing.Size(80, 77);
             this.btnSil.TabIndex = 27;
             this.btnSil.Text = "Sil";
             this.btnSil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -665,7 +759,8 @@
             // 
             // btnArsivle
             // 
-            this.btnArsivle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnArsivle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnArsivle.BackColor = System.Drawing.Color.GreenYellow;
             this.btnArsivle.FlatAppearance.BorderSize = 0;
             this.btnArsivle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -673,9 +768,10 @@
             this.btnArsivle.ForeColor = System.Drawing.Color.Green;
             this.btnArsivle.Image = global::EmlakOtomasyonu.Properties.Resources.icons8_archive_32;
             this.btnArsivle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnArsivle.Location = new System.Drawing.Point(3, 3);
+            this.btnArsivle.Location = new System.Drawing.Point(3, 6);
+            this.btnArsivle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnArsivle.Name = "btnArsivle";
-            this.btnArsivle.Size = new System.Drawing.Size(88, 72);
+            this.btnArsivle.Size = new System.Drawing.Size(80, 77);
             this.btnArsivle.TabIndex = 26;
             this.btnArsivle.Text = "Arsivle";
             this.btnArsivle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -685,7 +781,8 @@
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuncelle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuncelle.BackColor = System.Drawing.Color.GreenYellow;
             this.btnGuncelle.FlatAppearance.BorderSize = 0;
             this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -693,9 +790,10 @@
             this.btnGuncelle.ForeColor = System.Drawing.Color.Green;
             this.btnGuncelle.Image = global::EmlakOtomasyonu.Properties.Resources.icons8_update_32__1_;
             this.btnGuncelle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGuncelle.Location = new System.Drawing.Point(191, 3);
+            this.btnGuncelle.Location = new System.Drawing.Point(175, 6);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(91, 72);
+            this.btnGuncelle.Size = new System.Drawing.Size(80, 77);
             this.btnGuncelle.TabIndex = 25;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -703,39 +801,284 @@
             this.btnGuncelle.UseVisualStyleBackColor = false;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
-            // label9
+            // btnKaydet
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 490);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(475, 39);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Bilgilendirme\r\n*Ev bigilerini düzenlemek, arsivlemek, etkinlestirmek ya da silmek" +
-    " için herhangi bir eve çift tıklayın. \r\n**Yeni ev kaydetmek için tüm bilgileri d" +
-    "oldurup Kaydet butonuna tıklayın.";
+            this.btnKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKaydet.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnKaydet.FlatAppearance.BorderSize = 0;
+            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKaydet.ForeColor = System.Drawing.Color.Green;
+            this.btnKaydet.Image = global::EmlakOtomasyonu.Properties.Resources.icons8_save_32;
+            this.btnKaydet.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnKaydet.Location = new System.Drawing.Point(475, 213);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(105, 79);
+            this.btnKaydet.TabIndex = 15;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.BackColor = System.Drawing.Color.GreenYellow;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Dubai Light", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Green;
+            this.button3.Image = global::EmlakOtomasyonu.Properties.Resources.icons8_filter_32;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(3, 304);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(142, 41);
+            this.button3.TabIndex = 30;
+            this.button3.Text = "Filtrele";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // cbTarihAz
+            // 
+            this.cbTarihAz.AutoSize = true;
+            this.cbTarihAz.Font = new System.Drawing.Font("Dubai Light", 11.25F);
+            this.cbTarihAz.ForeColor = System.Drawing.Color.Green;
+            this.cbTarihAz.Location = new System.Drawing.Point(3, 46);
+            this.cbTarihAz.Name = "cbTarihAz";
+            this.cbTarihAz.Size = new System.Drawing.Size(203, 29);
+            this.cbTarihAz.TabIndex = 31;
+            this.cbTarihAz.Text = "Yapım Tarihi En Az Su Kadar";
+            this.cbTarihAz.UseVisualStyleBackColor = true;
+            this.cbTarihAz.CheckedChanged += new System.EventHandler(this.cbTarihAz_CheckedChanged);
+            // 
+            // cbAlanAz
+            // 
+            this.cbAlanAz.AutoSize = true;
+            this.cbAlanAz.Font = new System.Drawing.Font("Dubai Light", 11.25F);
+            this.cbAlanAz.ForeColor = System.Drawing.Color.Green;
+            this.cbAlanAz.Location = new System.Drawing.Point(3, 89);
+            this.cbAlanAz.Name = "cbAlanAz";
+            this.cbAlanAz.Size = new System.Drawing.Size(158, 29);
+            this.cbAlanAz.TabIndex = 32;
+            this.cbAlanAz.Text = "Alanı En Az Su Kadar";
+            this.cbAlanAz.UseVisualStyleBackColor = true;
+            this.cbAlanAz.CheckedChanged += new System.EventHandler(this.cbAlanAz_CheckedChanged);
+            // 
+            // cbOdaSayisiAz
+            // 
+            this.cbOdaSayisiAz.AutoSize = true;
+            this.cbOdaSayisiAz.Font = new System.Drawing.Font("Dubai Light", 11.25F);
+            this.cbOdaSayisiAz.ForeColor = System.Drawing.Color.Green;
+            this.cbOdaSayisiAz.Location = new System.Drawing.Point(3, 132);
+            this.cbOdaSayisiAz.Name = "cbOdaSayisiAz";
+            this.cbOdaSayisiAz.Size = new System.Drawing.Size(190, 29);
+            this.cbOdaSayisiAz.TabIndex = 33;
+            this.cbOdaSayisiAz.Text = "Oda Sayısı En Az Su Kadar";
+            this.cbOdaSayisiAz.UseVisualStyleBackColor = true;
+            this.cbOdaSayisiAz.CheckedChanged += new System.EventHandler(this.cbOdaSayisiAz_CheckedChanged);
+            // 
+            // dtTarihFazla
+            // 
+            this.dtTarihFazla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtTarihFazla.CalendarFont = new System.Drawing.Font("Dubai Light", 11.25F);
+            this.dtTarihFazla.CalendarForeColor = System.Drawing.Color.Green;
+            this.dtTarihFazla.CalendarMonthBackground = System.Drawing.Color.GreenYellow;
+            this.dtTarihFazla.CalendarTitleBackColor = System.Drawing.Color.GreenYellow;
+            this.dtTarihFazla.CalendarTitleForeColor = System.Drawing.Color.Green;
+            this.dtTarihFazla.CalendarTrailingForeColor = System.Drawing.Color.Green;
+            this.dtTarihFazla.Enabled = false;
+            this.dtTarihFazla.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtTarihFazla.Location = new System.Drawing.Point(294, 11);
+            this.dtTarihFazla.MaxDate = new System.DateTime(2100, 1, 1, 0, 0, 0, 0);
+            this.dtTarihFazla.Name = "dtTarihFazla";
+            this.dtTarihFazla.Size = new System.Drawing.Size(286, 20);
+            this.dtTarihFazla.TabIndex = 34;
+            this.dtTarihFazla.Value = new System.DateTime(2019, 10, 29, 2, 4, 15, 0);
+            // 
+            // dtTarihAz
+            // 
+            this.dtTarihAz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtTarihAz.CalendarFont = new System.Drawing.Font("Dubai Light", 11.25F);
+            this.dtTarihAz.CalendarForeColor = System.Drawing.Color.Green;
+            this.dtTarihAz.CalendarMonthBackground = System.Drawing.Color.GreenYellow;
+            this.dtTarihAz.CalendarTitleBackColor = System.Drawing.Color.GreenYellow;
+            this.dtTarihAz.CalendarTitleForeColor = System.Drawing.Color.Green;
+            this.dtTarihAz.CalendarTrailingForeColor = System.Drawing.Color.Green;
+            this.dtTarihAz.Enabled = false;
+            this.dtTarihAz.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtTarihAz.Location = new System.Drawing.Point(294, 54);
+            this.dtTarihAz.MaxDate = new System.DateTime(2100, 1, 1, 0, 0, 0, 0);
+            this.dtTarihAz.Name = "dtTarihAz";
+            this.dtTarihAz.Size = new System.Drawing.Size(286, 20);
+            this.dtTarihAz.TabIndex = 35;
+            this.dtTarihAz.Value = new System.DateTime(2019, 10, 29, 2, 4, 15, 0);
+            // 
+            // cbIldekiler
+            // 
+            this.cbIldekiler.AutoSize = true;
+            this.cbIldekiler.Font = new System.Drawing.Font("Dubai Light", 11.25F);
+            this.cbIldekiler.ForeColor = System.Drawing.Color.Green;
+            this.cbIldekiler.Location = new System.Drawing.Point(3, 175);
+            this.cbIldekiler.Name = "cbIldekiler";
+            this.cbIldekiler.Size = new System.Drawing.Size(96, 29);
+            this.cbIldekiler.TabIndex = 36;
+            this.cbIldekiler.Text = "Su Ildekiler";
+            this.cbIldekiler.UseVisualStyleBackColor = true;
+            this.cbIldekiler.CheckedChanged += new System.EventHandler(this.cbIldekiler_CheckedChanged);
+            // 
+            // cbFiyatOrKiraAz
+            // 
+            this.cbFiyatOrKiraAz.AutoSize = true;
+            this.cbFiyatOrKiraAz.Font = new System.Drawing.Font("Dubai Light", 11.25F);
+            this.cbFiyatOrKiraAz.ForeColor = System.Drawing.Color.Green;
+            this.cbFiyatOrKiraAz.Location = new System.Drawing.Point(3, 218);
+            this.cbFiyatOrKiraAz.Name = "cbFiyatOrKiraAz";
+            this.cbFiyatOrKiraAz.Size = new System.Drawing.Size(161, 29);
+            this.cbFiyatOrKiraAz.TabIndex = 37;
+            this.cbFiyatOrKiraAz.Text = "Fiyatı En Az Su Kadar";
+            this.cbFiyatOrKiraAz.UseVisualStyleBackColor = true;
+            this.cbFiyatOrKiraAz.CheckedChanged += new System.EventHandler(this.cbFiyatOrKiraAz_CheckedChanged);
+            // 
+            // cbFiyatOrKiraFazla
+            // 
+            this.cbFiyatOrKiraFazla.AutoSize = true;
+            this.cbFiyatOrKiraFazla.Font = new System.Drawing.Font("Dubai Light", 11.25F);
+            this.cbFiyatOrKiraFazla.ForeColor = System.Drawing.Color.Green;
+            this.cbFiyatOrKiraFazla.Location = new System.Drawing.Point(3, 261);
+            this.cbFiyatOrKiraFazla.Name = "cbFiyatOrKiraFazla";
+            this.cbFiyatOrKiraFazla.Size = new System.Drawing.Size(177, 29);
+            this.cbFiyatOrKiraFazla.TabIndex = 38;
+            this.cbFiyatOrKiraFazla.Text = "Fiyatı En Fazla Su Kadar";
+            this.cbFiyatOrKiraFazla.UseVisualStyleBackColor = true;
+            this.cbFiyatOrKiraFazla.CheckedChanged += new System.EventHandler(this.cbFiyatOrKiraFazla_CheckedChanged);
+            // 
+            // numFiyatOrKiraFazla
+            // 
+            this.numFiyatOrKiraFazla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numFiyatOrKiraFazla.BackColor = System.Drawing.Color.GreenYellow;
+            this.numFiyatOrKiraFazla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numFiyatOrKiraFazla.DecimalPlaces = 2;
+            this.numFiyatOrKiraFazla.Enabled = false;
+            this.numFiyatOrKiraFazla.ForeColor = System.Drawing.Color.Green;
+            this.numFiyatOrKiraFazla.Location = new System.Drawing.Point(294, 271);
+            this.numFiyatOrKiraFazla.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.numFiyatOrKiraFazla.Name = "numFiyatOrKiraFazla";
+            this.numFiyatOrKiraFazla.Size = new System.Drawing.Size(286, 16);
+            this.numFiyatOrKiraFazla.TabIndex = 39;
+            // 
+            // numFiyatOrKiraAz
+            // 
+            this.numFiyatOrKiraAz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numFiyatOrKiraAz.BackColor = System.Drawing.Color.GreenYellow;
+            this.numFiyatOrKiraAz.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numFiyatOrKiraAz.DecimalPlaces = 2;
+            this.numFiyatOrKiraAz.Enabled = false;
+            this.numFiyatOrKiraAz.ForeColor = System.Drawing.Color.Green;
+            this.numFiyatOrKiraAz.Location = new System.Drawing.Point(294, 228);
+            this.numFiyatOrKiraAz.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.numFiyatOrKiraAz.Name = "numFiyatOrKiraAz";
+            this.numFiyatOrKiraAz.Size = new System.Drawing.Size(286, 16);
+            this.numFiyatOrKiraAz.TabIndex = 40;
+            // 
+            // cmbIldekiler
+            // 
+            this.cmbIldekiler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbIldekiler.BackColor = System.Drawing.Color.GreenYellow;
+            this.cmbIldekiler.DropDownHeight = 100;
+            this.cmbIldekiler.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIldekiler.Enabled = false;
+            this.cmbIldekiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbIldekiler.ForeColor = System.Drawing.Color.Green;
+            this.cmbIldekiler.FormattingEnabled = true;
+            this.cmbIldekiler.IntegralHeight = false;
+            this.cmbIldekiler.Location = new System.Drawing.Point(294, 183);
+            this.cmbIldekiler.Name = "cmbIldekiler";
+            this.cmbIldekiler.Size = new System.Drawing.Size(286, 21);
+            this.cmbIldekiler.TabIndex = 41;
+            // 
+            // numOdaSayisiAz
+            // 
+            this.numOdaSayisiAz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numOdaSayisiAz.BackColor = System.Drawing.Color.GreenYellow;
+            this.numOdaSayisiAz.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numOdaSayisiAz.Enabled = false;
+            this.numOdaSayisiAz.ForeColor = System.Drawing.Color.Green;
+            this.numOdaSayisiAz.Location = new System.Drawing.Point(294, 142);
+            this.numOdaSayisiAz.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numOdaSayisiAz.Name = "numOdaSayisiAz";
+            this.numOdaSayisiAz.Size = new System.Drawing.Size(286, 16);
+            this.numOdaSayisiAz.TabIndex = 42;
+            this.numOdaSayisiAz.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numAlanAz
+            // 
+            this.numAlanAz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numAlanAz.BackColor = System.Drawing.Color.GreenYellow;
+            this.numAlanAz.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numAlanAz.DecimalPlaces = 2;
+            this.numAlanAz.Enabled = false;
+            this.numAlanAz.ForeColor = System.Drawing.Color.Green;
+            this.numAlanAz.Location = new System.Drawing.Point(294, 99);
+            this.numAlanAz.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.numAlanAz.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numAlanAz.Name = "numAlanAz";
+            this.numAlanAz.Size = new System.Drawing.Size(286, 16);
+            this.numAlanAz.TabIndex = 43;
+            this.numAlanAz.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // AnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1241, 735);
+            this.ClientSize = new System.Drawing.Size(1320, 836);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Tahoma", 8F);
             this.ForeColor = System.Drawing.Color.LimeGreen;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AnaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CELIK EMLAK OFISI";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnaForm_FormClosing);
             this.Load += new System.EventHandler(this.AnaForm_Load);
-            this.tabControl1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.tblKayit.ResumeLayout(false);
             this.tblKayit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFiyatOrKira)).EndInit();
@@ -743,24 +1086,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.numOdaSayisi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numKatNumarasi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAlani)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDepozito)).EndInit();
             this.tblDuzenle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numDepozito)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numFiyatOrKiraFazla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFiyatOrKiraAz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numOdaSayisiAz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAlanAz)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ImageList ımageList1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TableLayoutPanel tblKayit;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -790,6 +1132,29 @@
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnArsivle;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.CheckBox cbTarihFazla;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lblResimSec;
+        private System.Windows.Forms.Label lblResimler;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckBox cbTarihAz;
+        private System.Windows.Forms.DateTimePicker dtTarihAz;
+        private System.Windows.Forms.CheckBox cbAlanAz;
+        private System.Windows.Forms.CheckBox cbOdaSayisiAz;
+        private System.Windows.Forms.DateTimePicker dtTarihFazla;
+        private System.Windows.Forms.CheckBox cbIldekiler;
+        private System.Windows.Forms.CheckBox cbFiyatOrKiraAz;
+        private System.Windows.Forms.CheckBox cbFiyatOrKiraFazla;
+        private System.Windows.Forms.NumericUpDown numFiyatOrKiraFazla;
+        private System.Windows.Forms.NumericUpDown numFiyatOrKiraAz;
+        private System.Windows.Forms.ComboBox cmbIldekiler;
+        private System.Windows.Forms.NumericUpDown numOdaSayisiAz;
+        private System.Windows.Forms.NumericUpDown numAlanAz;
     }
 }
 

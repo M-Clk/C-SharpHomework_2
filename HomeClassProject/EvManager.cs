@@ -8,7 +8,7 @@ namespace HomeClassProject
     public class EvManager
     {
         private static readonly EvManager instance = new EvManager();
-        public static List<Ev> evList;
+        private static List<Ev> evList;
 
         private EvManager() //Static siniflarda kurucu metot yazilamadigindan singleton kullandik
         {
@@ -131,6 +131,20 @@ namespace HomeClassProject
         {
             return evList;
         }
+        public List<Ev> EvFiltrele(DateTime dateEnAz, DateTime dateEnFazla, decimal AlanEnAz, int odaSayisiEnAz, string ilAdi, decimal fiyatOrKiraEnAz, decimal fiyatOrKiraEnFazla)
+        {
+            var filtreliList = evList.Where(
+                tempEv =>
+                FiltreleTarihiEnAzSuOlan(tempEv, dateEnAz) &&
+                FiltreleTarihiEnFazlaSuOlan(tempEv, dateEnFazla) &&
+                FiltreleAlaniEnAzSuOlan(tempEv, AlanEnAz) &&
+                FiltreleOdaSayisiEnAzSuOlan(tempEv, odaSayisiEnAz) &&
+                FiltreleIliSuOlan(tempEv, ilAdi) &&
+                (tempEv is KiralikEv) ? FiltreleKiraEnAzSuOlan(tempEv, fiyatOrKiraEnAz) : FiltreleFiyatEnAzSuOlan(tempEv, fiyatOrKiraEnAz) &&
+                (tempEv is KiralikEv) ? FiltreleKiraEnFazlaSuOlan(tempEv, fiyatOrKiraEnFazla) : FiltreleFiyatEnFazlaSuOlan(tempEv, fiyatOrKiraEnFazla)
+                ).ToList();
+            return filtreliList;
+        }
         public List<Ev> KiralikEvleriGetir()
         {
             return evList.Where(tempEv => tempEv is KiralikEv).ToList();
@@ -139,21 +153,72 @@ namespace HomeClassProject
         {
             return evList.Where(tempEv => tempEv is SatilikEv).ToList();
         }
-        public List<Ev> EvListele(bool aktiflik)
+        private bool FiltreleTarihiEnAzSuOlan(Ev ev, DateTime date)//calisti
         {
-            return evList.Where(tempEv => tempEv.Aktif == aktiflik).ToList();
+            if (date == null)
+                return true;
+            else 
+                return ev.YapimTarihi >= date;
         }
-
-        public List<Ev> EvListele(Tur turu)
+        private bool FiltreleTarihiEnFazlaSuOlan(Ev ev, DateTime date)//calisti
         {
-            return evList.Where(tempEv => tempEv.Turu == turu).ToList();
+            if (date == null)
+                return true;
+            else
+                return ev.YapimTarihi <= date;
         }
-
-        public List<Ev> EvListele(int odaSayisi)
+        private bool FiltreleAlaniEnAzSuOlan(Ev ev, decimal alan)
         {
-            return evList.Where(tempEv => tempEv.OdaSayisi == odaSayisi).ToList();
+            if (alan == -1)
+                return true;
+            else
+                return ev.Alani >= alan;
         }
-
+        private bool FiltreleOdaSayisiEnAzSuOlan(Ev ev, int odaSayisi)
+        {
+            if (odaSayisi == -1)
+                return true;
+            else
+                return ev.OdaSayisi >= odaSayisi;
+        }
+        private bool FiltreleIliSuOlan(Ev ev, string ilAdi)
+        {
+            if (ilAdi == null)
+                return true;
+            else
+            {
+                string il=  ev.Semti.Split(new string[] { ", " }, StringSplitOptions.None)[1];
+                return il.Equals(ilAdi);
+            }
+        }
+        private bool FiltreleFiyatEnAzSuOlan(Ev ev, decimal fiyat)//calisti
+        {
+            if (fiyat == -1)
+                return true;
+            else
+                return ((SatilikEv)ev).Fiyat >= fiyat;
+        }
+        private bool FiltreleFiyatEnFazlaSuOlan(Ev ev, decimal fiyat)
+        {
+            if (fiyat == -1)
+                return true;
+            else
+                return ((SatilikEv)ev).Fiyat <= fiyat;
+        }
+        private bool FiltreleKiraEnAzSuOlan(Ev ev, decimal kira)
+        {
+            if (kira == -1)
+                return true;
+            else
+                return ((KiralikEv)ev).Kira >= kira;
+        }
+        private bool FiltreleKiraEnFazlaSuOlan(Ev ev, decimal kira)//calisti
+        {
+            if (kira == -1)
+                return true;
+            else
+                return ((KiralikEv)ev).Kira <= kira;
+        }
         public void EvGuncelle(Ev ev)
         {
             evList.Where(tempEv => tempEv.Equals(ev)).ToList()[0] = ev;

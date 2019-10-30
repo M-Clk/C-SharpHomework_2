@@ -105,6 +105,8 @@ namespace EmlakOtomasyonu
             numDepozito.Visible = kiralikMi;
             lblDepozito.Visible = kiralikMi;
             lblKiraOrFiyat.Text = kiralikMi ? "Kira (₺)" : "Fiyat (₺)";
+            cbFiyatOrKiraAz.Text = kiralikMi ? "Kirası En Az Su Kadar" : "Fiyatı En Az Su Kadar";
+            cbFiyatOrKiraFazla.Text = kiralikMi ? "Kirası En Fazla Su Kadar" : "Fiyatı En Fazla Su Kadar";
             if (kiralikMi)
                 EvleriGoster(evManager.KiralikEvleriGetir());
             else EvleriGoster(evManager.SatilikEvleriGetir());
@@ -225,7 +227,18 @@ namespace EmlakOtomasyonu
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            var filtreliList = evManager.EvFiltrele(
+                
+                cbTarihAz.Checked?dtTarihAz.Value:new DateTime(),
+                cbTarihFazla.Checked?dtTarihFazla.Value:new DateTime(),
+                cbAlanAz.Checked?numAlanAz.Value:-1,
+                cbOdaSayisiAz.Checked?(int)numOdaSayisi.Value:-1,
+                cbIldekiler.Checked?cmbIldekiler.SelectedItem.ToString():null,
+                cbFiyatOrKiraAz.Checked?numFiyatOrKiraAz.Value:-1,
+                cbFiyatOrKiraFazla.Checked?numFiyatOrKiraFazla.Value:-1
+                );
+            EvleriGoster(filtreliList);
+            KayitEkraniSifirla();
         }
 
         private void cbTarihFazla_CheckedChanged(object sender, EventArgs e)

@@ -48,11 +48,11 @@ namespace HomeClassProject
             }
         }
 
-        public int FiyatHesapla()
+        public decimal FiyatHesapla()
         {
-            int katsayi;
+            decimal katsayi;
             Dosya katsayiDosyasi = Dosya.DosyaGetir("room_cons.txt");
-            if (int.TryParse(katsayiDosyasi.Oku(), out katsayi))
+            if (decimal.TryParse(katsayiDosyasi.Oku(), out katsayi))
                 return OdaSayisi * katsayi;
             else
                 return defaultCost * OdaSayisi;

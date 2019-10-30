@@ -16,7 +16,7 @@ namespace HomeClassProject
             Fiyat = fiyati;
         }
 
-        protected internal SatilikEv()
+        internal SatilikEv()
         { }
 
         public decimal Fiyat
@@ -34,16 +34,6 @@ namespace HomeClassProject
             string format = "Emlak Numarası={0}|Oda Sayısı={1}|Kat Numarası={2}|Alan={3}|Yapım Tarihi={4:dd.MM.yyyy}|Semt={5}|Tür={6}|Aktif={7}|Fiyat={8}";
             string sonuc = string.Format(format, EmlakNumarasi, OdaSayisi, KatNumarasi, Alani, YapimTarihi, Semti, Enum.GetName(typeof(Tur), Turu), Aktif, Fiyat);
             return sonuc;
-        }
-
-        public KiralikEv EvOlustur(int emlakNumarasi, int kira, int depozito)
-        {
-            throw new NotImplementedException();
-        }
-
-        public SatilikEv EvOlustur(int emlakNumarasi, decimal fiyat)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -32,9 +32,9 @@ namespace HomeClassProject
                 int emlakNumarasi = int.Parse(ozellikler[0].Substring(ozellikler[0].LastIndexOf('=') + 1));
                 decimal kira = decimal.Parse(ozellikler[8].Substring(ozellikler[8].LastIndexOf('=') + 1));
                 decimal depozito = decimal.Parse(ozellikler[9].Substring(ozellikler[9].LastIndexOf('=') + 1));
-
                 KiralikEv kiralikEv = (KiralikEv)EvOlustur(emlakNumarasi, kira, depozito);
-                kiralikEv = (KiralikEv)OrtakEvBilgileriGir(ozellikler, kiralikEv);
+                if (kiralikEv != null)
+                    kiralikEv = (KiralikEv)OrtakEvBilgileriGir(ozellikler, kiralikEv);
             }
         }
         private void DosyadanSatilikEvYukle()
@@ -49,8 +49,8 @@ namespace HomeClassProject
 
                 int emlakNumarasi = int.Parse(ozellikler[0].Substring(ozellikler[0].LastIndexOf('=') + 1));
                 decimal fiyat = decimal.Parse(ozellikler[8].Substring(ozellikler[8].LastIndexOf('=') + 1));
-
                 SatilikEv satilikEv = (SatilikEv)EvOlustur(emlakNumarasi, fiyat);
+                if(satilikEv!=null)
                 satilikEv = (SatilikEv)OrtakEvBilgileriGir(ozellikler, satilikEv);
             }
         }
@@ -88,6 +88,7 @@ namespace HomeClassProject
                 evList.Add(newEv);
                 return newEv;
             }
+            
         }
         public Ev EvOlustur(int emlakNumarasi, decimal kira, decimal depozito)
         {
@@ -121,10 +122,10 @@ namespace HomeClassProject
 
             dosya.Guncelle(string.Join("&", evs.Select(ev => ev.EvBilgileri()).ToArray()));
 
-            evs = KiralikEvleriGetir();
+            List<Ev> kiralikEvs = KiralikEvleriGetir();
             dosya = Dosya.DosyaGetir("kiralik.txt");
 
-            dosya.Guncelle(string.Join("&", evs.Select(ev => ev.EvBilgileri()).ToArray()));
+            dosya.Guncelle(string.Join("&", kiralikEvs.Select(ev => ev.EvBilgileri()).ToArray()));
         }
 
         public List<Ev> EvFiltrele(DateTime dateEnAz, DateTime dateEnFazla, decimal AlanEnAz, int odaSayisiEnAz, string ilAdi, decimal fiyatOrKiraEnAz, decimal fiyatOrKiraEnFazla, bool aktif, bool kiralikMi)
@@ -222,16 +223,19 @@ namespace HomeClassProject
         public void EvGuncelle(Ev ev)
         {
             evList.Where(tempEv => tempEv.Equals(ev)).ToList()[0] = ev;
+            EvleriKaydet();
         }
 
         public void EvSil(Ev ev)
         {
             evList.Remove(ev);
+            EvleriKaydet();
         }
 
         public void EvArsivle(Ev ev)
         {
             ev.Aktif = false;
+            EvGuncelle(ev);
         }
 
     }

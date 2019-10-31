@@ -65,7 +65,6 @@
             this.btnKaydet = new System.Windows.Forms.Button();
             this.lblDepozito = new System.Windows.Forms.Label();
             this.numDepozito = new System.Windows.Forms.NumericUpDown();
-            this.cbAktif = new System.Windows.Forms.CheckBox();
             this.lblResimSec = new System.Windows.Forms.Label();
             this.lblResimler = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -83,6 +82,7 @@
             this.cmbIldekiler = new System.Windows.Forms.ComboBox();
             this.numOdaSayisiAz = new System.Windows.Forms.NumericUpDown();
             this.numAlanAz = new System.Windows.Forms.NumericUpDown();
+            this.cbAktif = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -699,7 +699,7 @@
             this.lblDepozito.Name = "lblDepozito";
             this.lblDepozito.Size = new System.Drawing.Size(120, 25);
             this.lblDepozito.TabIndex = 22;
-            this.lblDepozito.Text = "Depozitosu";
+            this.lblDepozito.Text = "Depozito (TL)";
             // 
             // numDepozito
             // 
@@ -717,21 +717,6 @@
             this.numDepozito.Name = "numDepozito";
             this.numDepozito.Size = new System.Drawing.Size(120, 16);
             this.numDepozito.TabIndex = 23;
-            // 
-            // cbAktif
-            // 
-            this.cbAktif.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbAktif.AutoSize = true;
-            this.cbAktif.Checked = true;
-            this.cbAktif.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbAktif.Font = new System.Drawing.Font("Dubai Light", 11.25F);
-            this.cbAktif.ForeColor = System.Drawing.Color.Green;
-            this.cbAktif.Location = new System.Drawing.Point(3, 300);
-            this.cbAktif.Name = "cbAktif";
-            this.cbAktif.Size = new System.Drawing.Size(359, 29);
-            this.cbAktif.TabIndex = 24;
-            this.cbAktif.Text = "Aktif Olanlar";
-            this.cbAktif.UseVisualStyleBackColor = true;
             // 
             // lblResimSec
             // 
@@ -1024,6 +1009,21 @@
             0,
             0});
             this.numAlanAz.Visible = false;
+            // 
+            // cbAktif
+            // 
+            this.cbAktif.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbAktif.AutoSize = true;
+            this.cbAktif.Checked = true;
+            this.cbAktif.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAktif.Font = new System.Drawing.Font("Dubai Light", 11.25F);
+            this.cbAktif.ForeColor = System.Drawing.Color.Green;
+            this.cbAktif.Location = new System.Drawing.Point(3, 300);
+            this.cbAktif.Name = "cbAktif";
+            this.cbAktif.Size = new System.Drawing.Size(359, 29);
+            this.cbAktif.TabIndex = 24;
+            this.cbAktif.Text = "Aktif Olanlar";
+            this.cbAktif.UseVisualStyleBackColor = true;
             // 
             // button3
             // 

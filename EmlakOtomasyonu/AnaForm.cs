@@ -43,18 +43,17 @@ namespace EmlakOtomasyonu
             if (cbKategori.SelectedIndex == 0)
                 ResimKaydet(SatilikEvKaydet());
             else ResimKaydet(KiralikEvKaydet());
+            evManager.EvleriKaydet();
             Kaydedildi();
-            
         }
         void ResimKaydet(Ev yeniEv)
         { if (seciliResimler.Length == 0) return;
             string picPath = Application.StartupPath + "\\Resimler\\" + yeniEv.EmlakNumarasi;
             if (!Directory.Exists(picPath))
-            Directory.CreateDirectory(picPath);
+            Directory.CreateDirectory(picPath).Create();
             int i = 0;
             foreach (var item in seciliResimler)
-                File.Copy(item, picPath + "\\" +yeniEv.EmlakNumarasi+"_"+(i++));
-            
+                File.Copy(item, picPath + "\\" +yeniEv.EmlakNumarasi+"_"+(i++)+"."+item.Split('.').Reverse().ToArray()[0]);//Dosya ismi.uzantisi
         }
         void Kaydedildi()
         {
@@ -70,14 +69,13 @@ namespace EmlakOtomasyonu
                 if (item is ComboBox)
                 if(((ComboBox)item).Items.Count>0)
                     ((ComboBox)item).SelectedIndex = 0;
-                
-
             }
             tblDuzenle.Visible = false;
             btnKaydet.Visible = true;
             lblResimSec.Visible = true;
             seciliResimler=new string[0];
             dtYapimTarihi.Value = DateTime.Now;
+            lblResimler.Visible = false;
         }
 
         Ev SatilikEvKaydet()
@@ -104,11 +102,10 @@ namespace EmlakOtomasyonu
             bool kiralikMi = ((ComboBox)sender).SelectedIndex == 1;
             numDepozito.Visible = kiralikMi;
             lblDepozito.Visible = kiralikMi;
-            lblKiraOrFiyat.Text = kiralikMi ? "Kira (₺)" : "Fiyat (₺)";
+            lblKiraOrFiyat.Text = kiralikMi ? "Kira (TL)" : "Fiyat (TL)";
             cbFiyatOrKiraAz.Text = kiralikMi ? "Kirası En Az Su Kadar" : "Fiyatı En Az Su Kadar";
             cbFiyatOrKiraFazla.Text = kiralikMi ? "Kirası En Fazla Su Kadar" : "Fiyatı En Fazla Su Kadar";
             EvleriFiltrele();
-            KayitEkraniSifirla();
         }
         void EvleriFiltrele()
         {
@@ -193,7 +190,6 @@ namespace EmlakOtomasyonu
                 ((KiralikEv)seciliEv).Kira = numFiyatOrKira.Value;
                 ((KiralikEv)seciliEv).Depozito = numDepozito.Value;
             }
-                
             evManager.EvGuncelle(seciliEv);
             Kaydedildi();
         }
@@ -225,12 +221,12 @@ namespace EmlakOtomasyonu
         private void label10_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-            
         }
 
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             seciliResimler = openFileDialog1.FileNames;
+            lblResimler.Visible = true;
             lblResimler.Text = openFileDialog1.FileNames.Length + " resim secildi.";
         }
 

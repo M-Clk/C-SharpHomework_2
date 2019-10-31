@@ -30,7 +30,6 @@ namespace HomeClassProject
             if (sonuc.Count() > 0) return sonuc.First();
             else
                 return new Dosya(dosyaAdi);
-           
         }
 
         private void Olustur()//Bu isimde dosya yoksa olusturuyoruz ve FileStream donduren Create methodunun geri donus degerini kapatiyoruz ki okuma yazma islemi yapilabilsin
